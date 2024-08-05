@@ -77,25 +77,25 @@ public class MapCreator {
 			ex.printStackTrace();
 		}
 		
-		model.addTexture("VertexColor", "vertexcolor:vertexcolor");
-
-		for (int i = 0; i < 128; ++i) {
-			for (int j = 0; j < 128; ++j) {
-				float x = ((float) i) / 8f;
-				float y = ((float) (127-j)) / 8f;
-				float xMax = x + (1f / 8f);
-				float yMax = y + (1f / 8f);
-
-				RGB color = getRGBFromId(colorIds[i + j * 128]);
-				if (color == null)
-					continue;
-
-				model.addFace(new float[]{ x, y, 8.05f, xMax, yMax, 8.05f }, new float[] { x, y, xMax, yMax }, 
-						Direction.SOUTH, "#VertexColor");
-				
-				model.faces.get(model.faces.size() - 1).setFaceColour(color.x, color.y, color.z);
-			}
-		}
+//		model.addTexture("VertexColor", "vertexcolor:vertexcolor");
+//
+//		for (int i = 0; i < 128; ++i) {
+//			for (int j = 0; j < 128; ++j) {
+//				float x = ((float) i) / 8f;
+//				float y = ((float) (127-j)) / 8f;
+//				float xMax = x + (1f / 8f);
+//				float yMax = y + (1f / 8f);
+//
+//				RGB color = getRGBFromId(colorIds[i + j * 128]);
+//				if (color == null)
+//					continue;
+//
+//				model.addFace(new float[]{ x, y, 8.05f, xMax, yMax, 8.05f }, new float[] { x, y, xMax, yMax },
+//						Direction.SOUTH, "#VertexColor");
+//
+//				model.faces.get(model.faces.size() - 1).setFaceColour(color.x, color.y, color.z);
+//			}
+//		}
 
 		return model;
 	}

@@ -48,7 +48,7 @@ public class BlockStateSign extends BlockState{
 	}
 	
 	public String getDefaultTexture() {
-		return "minecraft:block/sign";
+		return "minecraft:entity/signs/oak";
 	}
 	
 	@Override
@@ -87,8 +87,9 @@ public class BlockStateSign extends BlockState{
 			}
 			rotY = (((float) ival) / 16f) * 360f;
 		}
-		
-		model.addTexture("texture", "minecraft:block/" + name.replace("_wall_", "_"));
+		String matType = name.split("_")[0].split(":")[1];
+		model.addTexture("texture", "minecraft:entity/signs/" + matType);
+
 		//model.addTexture("#font", "minecraft:font/ascii");
 		
 		float scale = 16f / 24f;

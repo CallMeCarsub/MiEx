@@ -87,6 +87,10 @@ public class BlockStateShulkerBox extends BlockState{
 		} else if(colorTokens.length == 4) {
 			color = colorTokens[0] + "_" + colorTokens[1];
 		}
+
+		if(color.contains(":")){
+			color = color.split(":")[1];
+		}
 		
 		model.addTexture("texture", "minecraft:entity/shulker/" + (color == null ? "shulker" : "shulker_" + color));
 		
