@@ -26,3 +26,5 @@ bin
 /resources
 classes
 .idea
+log.txt
+*.iml
